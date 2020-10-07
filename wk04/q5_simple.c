@@ -1,7 +1,14 @@
 #include <stdio.h>
 
 int main(void) {
-    for (int x = 24; x < 42; x += 3) {
+    int x = 24;
+loop:
+    if (x >= 42) goto end;
         printf("%d\n",x);
-    }
+
+        x += 3;
+        goto loop;
+
+end:
+    return 0;
 }

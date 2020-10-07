@@ -2,11 +2,23 @@
 #include <stdio.h>
 
 int main (void) {
-    for (int i = 1; i <= 10; i++) {
-        for (int j = 0; j < i; j++) {
-            printf("*");
-        }
-        printf("\n");
-    };
+    int i = 1;
+
+loop0:
+    if (i > 10) goto end0;
+    int j = 0;
+
+loop1:
+    if (j >= i) goto end1;
+    printf("*");
+    j++;
+    goto loop1;
+
+end1:
+    printf("\n");
+    i++;
+    goto loop0;
+
+end0:
     return 0;
 }
